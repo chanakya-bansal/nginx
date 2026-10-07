@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>VHealthy</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+ 
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNF.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="w3-light">
+
+  <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+    <!-- Logo -->
+    <img src="logo.jpg" alt="Logo" style="width:100%">
+    
+    <a href="#steps" class="w3-bar-item w3-button w3-padding-large w3-hover-grey">
+      <i class="fa w3-xxlarge"></i>
+      <p>Steps and Calories</p>
+    </a>
+    <a href="#meals" class="w3-bar-item w3-button w3-padding-large w3-hover-grey">
+      <i class="fa w3-xxlarge"></i>
+      <p>+ Add Meals</p>
+    </a>
+    <a href="#medicines" class="w3-bar-item w3-button w3-padding-large w3-hover-grey">
+      <i class="fa w3-xxlarge"></i>
+      <p>+ Add Medicines</p>
+    </a>
+    <a href="#sos" class="w3-bar-item w3-button w3-padding-large w3-hover-grey">
+      <i class="fa w3-xxlarge"></i>
+      <p>SOS</p>
+    </a>
+  </nav>
+
+  <!-- Navbar for Small Screens -->
+  <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+    <div class="w3-bar w3-light w3-opacity w3-hover-opacity-off w3-center w3-small">
+      <a href="#steps" class="w3-bar-item w3-button" style="width:25% !important">Steps and Calories</a>
+      <a href="#meals" class="w3-bar-item w3-button" style="width:25% !important">+ Add Meals</a>
+      <a href="#medicines" class="w3-bar-item w3-button" style="width:25% !important">+ Add Medicines</a>
+      <a href="#sos" class="w3-bar-item w3-button" style="width:25% !important">SOS</a>
+    </div>
+  </div>
+
+  <!-- Main Page Content -->
+  <div class="w3-padding-large" id="main">
+    <!-- Header/Home Section -->
+    <header class="w3-container w3-padding-32 w3-center w3-light" id="home">
+      <h1 class="w3-jumbo"><span class="w3-hide-small">VHealthy</span></h1>
+      <p>A healthy approach to life</p>
+    </header>
+
+    <!-- Steps Section -->
+    <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="steps">
+      <h2 class="w3-text-grey">Steps and Calories</h2>
+      <hr style="width:200px" class="w3-opacity">
+    
+      <canvas id="myChart"  ></canvas>
+      <p>
+        <link rel="stylesheet" href="ul_style.css"> 
+        <h3>Weekly Goals</h3>
+        <h4>
+            <ul>
+                <li>    Complete 10,000 steps on Sunday</li>
+                <li>    Burn 2,000 calories on Monday </li>
+            </ul>
+        </h4>
+        <h4>
+            <ol>
+                <li>    Complete 8,000 steps on Thursday</li>
+                <li>    Burn 6,000 calories on Wednesday </li>
+            </ol>
+        </h4>
+    
+    </p>
+     
+    </div>
+
+    <!-- Add Meals Section -->
+    <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="meals">
+      <h2 class="w3-text-grey">Add Meals</h2>
+      <hr style="width:200px" class="w3-opacity">
+      <p>Add meals to calculate calorie intake. <br></br> You can also ask Healo to make you a personalised diet plan.</p>
+      <button id="addMealBtn" onclick="openDialogs()" class="w3-button w3-green w3-round">+ Add Meal</button>
+
+      <!-- Meal Name Dialog -->
+      <div id="mealDialog" class="dialog-box">
+          <h4>Meal Name</h4>
+          <input type="text" id="mealName" placeholder="Meal Name">
+          <button onclick="submitForms()" class="w3-button w3-blue w3-round">Submit</button>
+      </div>
+  
+      <!-- gram Dialog -->
+      <div id="caloriesDialog" class="dialog-box">
+          <h4>Grams</h4>
+          <input type="number" id="mealCalories" placeholder="Grams">
+          <button onclick="submitForms()" class="w3-button w3-blue w3-round">Submit</button>
+            </div>
+        </div>
+  
+        <iframe align="right" width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/d4a96a17-3dce-4eb0-83cf-b6c59999df63"></iframe>
+
+    <!-- Add Medicines Section -->
+    <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="medicines">
+      <h2 class="w3-text-grey">Add Medicines</h2>
+      <hr style="width:200px" class="w3-opacity">
+      <p>Add medicines to receive reminders.</p>
+      <button id="addMedBtn" onclick="openDialogsM()" class="w3-button w3-green w3-round">+ Add Medicine</button>
+
+      <!-- Med Dialog -->
+      <div id="medDialog" class="dialog-box">
+          <h4>Med Name</h4>
+          <input type="text" id="medName" placeholder="Med Name">
+          <button onclick="submitFormsM()" class="w3-button w3-blue w3-round">Submit</button>
+      </div>
+  
+      <!-- dosage Dialog -->
+      <div id="doseDialog" class="dialog-box">
+          <h4>Dosage</h4>
+          <input type="number" id="dosage" placeholder="dosage">
+          <button onclick="submitFormsM()" class="w3-button w3-blue w3-round">Submit</button>
+            </div>
+        <!-- frequency Dialog -->
+        <div id="freqDialog" class="dialog-box">
+            <h4>Frequency/day</h4>
+            <input type="number" id="frequency" placeholder="frequency">
+            <button onclick="submitFormsM()" class="w3-button w3-blue w3-round">Submit</button>
+            </div>
+    </div>
+
+    <!-- Emergency SOS Section -->
+    <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="sos">
+      <h2 class="w3-text-grey">Emergency SOS</h2>
+      
+      <hr style="width:200px" class="w3-opacity">
+      <p>
+        Christian Medical College (CMC) Vellore   +91 9498760000<br><br>
+        
+        Government Hospital, Vellore    0416 226 0900                   <br><br>
+        
+        Sri Narayani Hospital & Research Centre +91 9952281654<br><br>
+        
+        Apollo KH Hospital  04172 269 581<br><br>
+        
+        Arun Ortho Hospital 0416 223 4217<br><br>
+        
+        V P Hospital    +91 9345301138<br><br>
+        
+        Vasan Eye Care Hospital 044 3989 0000<br><br>
+        
+        Lakshmi Hospital    0416 420 1255<br><br>
+        
+        Ravi Bharathi Hospital  0416 224 2670<br><br>
+        
+        TB Hospital     +91 9876583390<br><br>
+            </p>
+    </div>
+   
+  </div>
+
+
+  <script src="main.js"></script>
+</body>
+</html>

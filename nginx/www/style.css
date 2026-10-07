@@ -1,0 +1,171 @@
+
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat", sans-serif;
+    background-color: #ffffff;
+    color: #222;
+  }
+  
+
+  .w3-row-padding img {
+    margin-bottom: 12px;
+  }
+  
+  /* Sidebar Styles */
+  .w3-sidebar {
+    width: 120px;
+    background: #e0e0e0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  
+  /* Main content left margin to make space for the sidebar */
+  #main {
+    margin-left: 120px;
+  }
+  
+  /* Responsive: Remove left margin on small screens */
+  @media only screen and (max-width: 600px) {
+    #main {
+      margin-left: 0;
+    }
+  }
+  
+
+  .dialog-box {
+    position: absolute;
+    background: #ffffff;
+    color: #222;
+    padding: 15px;
+    border-radius: 8px;
+    width: 200px;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ddd;
+}
+.dialog-box input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.dialog-box button {
+    margin-top: 10px;
+    width: 100%;
+}
+
+
+ul {
+    list-style: none;
+  }
+  
+  ul li:before {
+    content: '✅';
+  }
+
+  ol {
+    list-style: none;
+  }
+  
+  ol li:before {
+    content: '❌';
+  }
+
+
+
+
+
+
+
+
+  #addMealBtn {
+    background: linear-gradient(45deg, #ff4655, #ff7a8d); /* Gradient from top-left to bottom-right */
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 8px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 70, 85, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #addMealBtn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.5s ease;
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #addMealBtn:hover::before {
+    width: 100%; /* Hover effect starts from left */
+  }
+  
+  #addMealBtn:hover {
+    background: linear-gradient(45deg, #d63447, #ff5c75); /* Darker gradient on hover */
+    box-shadow: 0 6px 15px rgba(214, 52, 71, 0.4);
+  }
+  
+  #addMealBtn:active {
+    transform: scale(0.95);
+  }
+  
+
+
+  #addMedBtn {
+    background: linear-gradient(45deg, #ff4655, #ff7a8d); /* Gradient from top-left to bottom-right */
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 8px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 70, 85, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #addMedBtn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.5s ease;
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #addMedBtn:hover::before {
+    width: 100%; /* Hover effect starts from left */
+  }
+  
+  #addMedBtn:hover {
+    background: linear-gradient(45deg, #d63447, #ff5c75); /* Darker gradient on hover */
+    box-shadow: 0 6px 15px rgba(214, 52, 71, 0.4);
+  }
+  
+  #addMedBtn:active {
+    transform: scale(0.95);
+  }
+  
+
+
+
